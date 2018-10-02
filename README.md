@@ -1,5 +1,5 @@
 # 20181011datascience3rd
-## [デモはこちら](https://t-macchinetta.github.io/20181011datascience3rd/){:target="_blank"}
+<!-- ## [デモはこちら](https://t-macchinetta.github.io/20181011datascience3rd/){:target="_blank"} -->
 ## <a href="https://t-macchinetta.github.io/20181011datascience3rd/" target="_blank">Demo</a>
 ## 2018/10/02進捗
 ### 動作
