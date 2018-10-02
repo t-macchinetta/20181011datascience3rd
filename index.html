@@ -117,7 +117,8 @@
                             scrollwheel: false,
                             mapTypeControl: false,
                             streetViewControl: false,
-                            fullscreenControl: false
+                            fullscreenControl: false,
+                            preserveViewport: true
                         });
                         // クリックで座標取得
                         google.maps.event.addListener(map, 'click', mylistener);
@@ -143,7 +144,7 @@
                     destination: destination.latlng,
                     travelMode: google.maps.TravelMode.DRIVING,
                     avoidHighways: false,  //高速を避ける場合true
-                    provideRouteAlternatives: true,
+                    provideRouteAlternatives: true
                     // waypoints: [
                     //     { location: test }  //経由地を追加する場合はここに記載
                     // ]
@@ -170,6 +171,10 @@
                             directionsRenderer.setDirections(response);
                             directionsRenderer.setRouteIndex(routeIndex);
                             directionsRenderer.setMap(map);
+                            setTimeout(function () {
+                                map.setZoom(11); // ルート表示後にズーム率を変更
+                            });
+
                         }
                     }
                 });
