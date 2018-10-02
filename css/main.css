@@ -1,0 +1,30 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+section {
+    width: 100%;
+}
+#map {
+    width: 100%;
+    height: 500px;
+}
+#modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000000000;
+    background: rgba(30,30,30,0.9);
+    opacity: 0.8;
+}
+h1 {
+    font-size: 2rem;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: 700;
+}
+.hidden{
+    display: none;
+}
