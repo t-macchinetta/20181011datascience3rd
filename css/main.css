@@ -37,7 +37,6 @@ button{
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: 700;
     text-align: center;
-    cursor: pointer;
 }
 .hidden{
     display: none;
