@@ -15,11 +15,11 @@
 <body>
     <section id="title">
         <nav class="navbar navbar-dark bg-dark">
-            <span id="title" class="navbar-brand mb-0 h1">YOCCHI</span>
+            <span id="title" class="navbar-brand mb-0 h1" onclick="window.location.reload();">YOCCHI</span>
         </nav>
     </section>
 
-    <section id="login_section">
+    <section id="login_section" class="main">
         <form>
             <div class="form-group">
                 <label for="uid">Email address</label>
@@ -30,10 +30,10 @@
                 <input type="password" class="login form-control" id="pass" placeholder="Password">
             </div>
             <div class="form-group">
-                <button type="button" id="login" class="btn btn-primary btn-lg btn-block">Login</button>
+                <button type="button" id="login" class="btn btn-primary btn-lg btn-block">Sign In</button>
             </div>
             <div class="form-group">
-                <button type="button" id="account_add" class="btn btn-outline-primary btn-lg btn-block">アカウントをお持ちでない方</button>
+                <button type="button" id="account_add" class="btn btn-outline-primary btn-lg btn-block">Sign Up</button>
             </div>
         </form>
         <!-- <p>ログイン</p>
@@ -48,23 +48,38 @@
         <button id="login">Login</button>
         <button id="account_add">アカウントをお持ちでない方</button> -->
     </section>
-    <!-- <section id="start"></section> -->
-    <section id="route" class="hidden">
+    <section id="route" class="main hidden">
         <div id="map"></div>
-        <label for="origin">
-            From
-            <input type="text" id="origin" value="">
-        </label>
-        <label for="destination">
-            To
-            <input type="text" id="destination" value="">
-        </label>
-        <button id="start">Start</button>
-        <!-- <input type="text" id="latitude" placeholder="テスト用"> -->
-        <!-- <input type="text" id="longitude" placeholder="テスト用"> -->
+        <form id="route_form" class="form-horizontal">
+            <div class="row">
+                <div class="form-group col-sm-6">
+                    <label for="origin" class="col-xs-12 col-sm-12 control-label">Origin</label>
+                    <div class="col-xs-12 col-sm-12">
+                        <input type="text" class="login form-control" id="origin" placeholder="Enter origin">
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="destination" class="col-xs-12 col-sm-12 control-label">Destination</label>
+                    <div class="col-xs-12 col-sm-12">
+                        <input type="text" class="login form-control" id="destination" placeholder="Enter destination">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="button" id="start" class="btn btn-primary btn-lg btn-block">Start</button>
+            </div>
+        </form>
+
+        <!-- テスト用 -->
+        <!-- <form>
+            <input type="text" class="login form-control" id="latitude" placeholder="lat">
+            <input type="text" class="login form-control" id="longitude" placeholder="lng">
+        </form> -->
+
     </section>
-    <section id="menber" class="hidden">
-        div#
+
+    <section id="menber" class="main hidden">
+
     </section>
     <section id="modal" class="hidden"></section>
 

@@ -3,6 +3,7 @@ $(window).on('load', function () {
     $login_sec = $('#login_section');
     $start = $('#start');
     $modal = $('#modal');
+
     // 描画オブジェクトの定義
     var map;
     var marker = [];
@@ -25,6 +26,10 @@ $(window).on('load', function () {
 
     // マップ表示関数
     function init() {
+        // var wh = $(window).height();
+        // var nh = $('#title').outerHeight(true);
+        // var rfh = $('#route_form').outerHeight(true);
+        // $('#map').height(wh - nh - rfh);
         if (navigator.geolocation) {
             // 現在地を取得
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -175,6 +180,11 @@ $(window).on('load', function () {
         modalIn();
         $login_sec.addClass('hidden');
         $('#route').removeClass('hidden');
+        var wh = $(window).height();
+        var nh = $('#title').outerHeight(true);
+        var rfh = $('#route_form').outerHeight(true);
+        $('#map').height(wh - nh - rfh);
+
         setTimeout(() => {
             init();
         }, 500);

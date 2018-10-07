@@ -2,13 +2,25 @@ html,
 body {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin:  0 auto; */
 }
 section {
     width: 100%;
 }
+form{
+    /* max-width: 512px; */
+    padding: 5%;
+    margin: 0 auto;
+}
+button{
+    max-width: 350px;
+    margin: 0 auto;
+}
 #map {
     width: 100%;
-    height: 500px;
 }
 #modal{
     width: 100%;
@@ -25,7 +37,9 @@ section {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: 700;
     text-align: center;
+    cursor: pointer;
 }
 .hidden{
     display: none;
 }
+
