@@ -1,5 +1,5 @@
 $(window).on('load', function () {
-    $login = $('#login');
+    $login = $('#login_section');
     $start = $('#start');
     $modal = $('#modal');
     // 描画オブジェクトの定義

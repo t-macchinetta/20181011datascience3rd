@@ -5,25 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TestApp</title>
+    <title>YOCCHI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <section id="title">
-        <h1 id="title">TestApp</h1>
+        <h1 id="title">YOCCHI</h1>
     </section>
-    <section id="login">
+    <section id="login_section">
+        <p>ログイン</p>
         <label for="origin">
-            ID
-            <input type="text" id="uid">
+            ユーザーID
+            <input type="text" id="uid" class="login">
         </label>
         <label for="destination">
-            Pass
-            <input type="password" id="pass">
+            パスワード
+            <input type="password" id="pass" class="login">
         </label>
         <button id="login">Login</button>
+        <button id="account_add">アカウントをお持ちでない方</button>
     </section>
     <!-- <section id="start"></section> -->
     <section id="route" class="hidden">
@@ -40,7 +44,9 @@
         <!-- <input type="text" id="latitude" placeholder="テスト用"> -->
         <!-- <input type="text" id="longitude" placeholder="テスト用"> -->
     </section>
-    <!-- <section id="menber"></section> -->
+    <section id="menber" class="hidden">
+        div#
+    </section>
     <section id="modal" class="hidden"></section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
