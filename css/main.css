@@ -11,11 +11,23 @@ section {
     width: 100%;
 }
 form{
-    /* max-width: 512px; */
-    padding: 5%;
+    padding-right: 3%;
+    padding-left: 3%;
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin: 0 auto;
 }
-button{
+#login_section{
+    max-width: 512px;
+}
+#uid, #pass, #origin, #destination{
+    border-top:0; 
+    border-right:0; 
+    border-left:0; 
+    border-radius: 0;
+}
+#login, #account_add, #start{
+    width: 75%;
     max-width: 350px;
     margin: 0 auto;
 }
