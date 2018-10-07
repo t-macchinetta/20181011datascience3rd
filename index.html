@@ -16,6 +16,7 @@
     <section id="title">
         <nav class="navbar navbar-dark bg-dark">
             <a id="title" class="navbar-brand" href="#" onclick="window.location.reload();">YOCCHI</a>
+            <a id="toggle" class="navbar-brand" href="#">>member</a>
             <!-- <span id="title" class="navbar-brand mb-0 h1" onclick="window.location.reload();">YOCCHI</span> -->
         </nav>
 
@@ -23,20 +24,24 @@
 
     <section id="login_section" class="main">
         <form id="login_form">
-            <div class="form-group">
-                <label for="uid">Email address</label>
-                <input type="email" class="login form-control" id="uid" placeholder="Enter email">
+            <div class="input_area">
+                <div class="form-group">
+                    <label for="uid">Email address</label>
+                    <input type="email" class="login form-control" id="uid" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input type="password" class="login form-control" id="pass" placeholder="Enter password">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="pass">Password</label>
-                <input type="password" class="login form-control" id="pass" placeholder="Enter password">
-            </div>
-            <div class="form-group">
-                <button type="button" id="login" class="btn btn-primary btn-lg btn-block badge-pill">Sign In</button>
-            </div>
-            <div class="form-group">
-                <button type="button" id="account_add" class="btn btn-outline-primary btn-lg btn-block badge-pill">Sign
-                    Up</button>
+            <div>
+                <div class="form-group">
+                    <button type="button" id="login" class="btn btn-primary btn-lg btn-block badge-pill">Sign In</button>
+                </div>
+                <div class="form-group">
+                    <button type="button" id="account_add" class="btn btn-outline-primary btn-lg btn-block badge-pill">Sign
+                        Up</button>
+                </div>
             </div>
         </form>
         <!-- <p>ログイン</p>
@@ -82,7 +87,7 @@
     </section>
 
     <section id="menber" class="main hidden">
-
+        <h1>aaa</h1>
     </section>
     <section id="modal" class="hidden"></section>
 

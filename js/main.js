@@ -3,6 +3,7 @@ $(window).on('load', function () {
     $login_sec = $('#login_section');
     $start = $('#start');
     $modal = $('#modal');
+    $toggle = $('#toggle');
 
     // 描画オブジェクトの定義
     var map;
@@ -26,10 +27,6 @@ $(window).on('load', function () {
 
     // マップ表示関数
     function init() {
-        // var wh = $(window).height();
-        // var nh = $('#title').outerHeight(true);
-        // var rfh = $('#route_form').outerHeight(true);
-        // $('#map').height(wh - nh - rfh);
         if (navigator.geolocation) {
             // 現在地を取得
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -55,7 +52,7 @@ $(window).on('load', function () {
     }
 
     // ルートとマーカーを表示する関数
-    function route() {
+    function route(origin, destination) {
         // ルート表示設定
         var directionsDisplay = new google.maps.DirectionsRenderer({
             map: map,
@@ -104,7 +101,6 @@ $(window).on('load', function () {
         });
         // マーカーの場所を指定
         var markerData = [
-            origin,
             destination,
             {
                 name: '酔いやすい地点あり',
@@ -129,7 +125,8 @@ $(window).on('load', function () {
                     lng: 139.35024295849212
                 },
                 icon: 'img/1234.png'
-            }
+            },
+            origin
         ];
         // マーカーの描画(ちょっと遅らせてみる)
         setTimeout(() => {
@@ -184,7 +181,6 @@ $(window).on('load', function () {
         var nh = $('#title').outerHeight(true);
         var rfh = $('#route_form').outerHeight(true);
         $('#map').height(wh - nh - rfh);
-
         setTimeout(() => {
             init();
         }, 500);
@@ -200,7 +196,22 @@ $(window).on('load', function () {
     $start.on('click', function () {
         modalIn();
         setTimeout(() => {
-            route();
+            route(origin, destination);
         }, 500);
+    });
+
+    // 表示切り替え
+    $toggle.on('click', function () {
+        var wh = $(window).height();
+        var nh = $('#title').outerHeight(true);
+        // var rfh = $('#route_form').outerHeight(true);
+        // $('#map').height(wh - nh - rfh);
+        // $('#menber').height(wh - nh);
+        $('#menber').css({
+            'height': wh - nh,
+            'top': nh
+        });
+
+        $('#menber').toggleClass('hidden');
     });
 });
