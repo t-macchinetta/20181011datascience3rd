@@ -204,14 +204,10 @@ $(window).on('load', function () {
     $toggle.on('click', function () {
         var wh = $(window).height();
         var nh = $('#title').outerHeight(true);
-        // var rfh = $('#route_form').outerHeight(true);
-        // $('#map').height(wh - nh - rfh);
-        // $('#menber').height(wh - nh);
-        $('#menber').css({
+        $('#member').css({
             'height': wh - nh,
             'top': nh
         });
-
-        $('#menber').toggleClass('hidden');
+        $('#member').toggleClass('hidden');
     });
 });
