@@ -175,6 +175,7 @@ $(window).on('load', function () {
     // マップ表示関数実行
     $login.on('click', function () {
         modalIn();
+        $toggle.removeClass('hidden');
         $login_sec.addClass('hidden');
         $('#route').removeClass('hidden');
         var wh = $(window).height();
@@ -185,6 +186,8 @@ $(window).on('load', function () {
             init();
         }, 500);
     });
+
+    // 場所の入力
     $('#origin').on('click', function () {
         $('#origin').val(origin.name);
     });
@@ -202,10 +205,14 @@ $(window).on('load', function () {
 
     // 表示切り替え
     $toggle.on('click', function () {
+        if ($toggle.text() == "> member") {
+            $toggle.text('> map');
+        } else {
+            $toggle.text('> member');
+        }
         var wh = $(window).height();
         var nh = $('#title').outerHeight(true);
         $('#member').css({
-            'height': wh - nh,
             'top': nh
         });
         $('#member').toggleClass('hidden');
