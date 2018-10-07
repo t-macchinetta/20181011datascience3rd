@@ -1,5 +1,6 @@
 $(window).on('load', function () {
-    $login = $('#login_section');
+    $login = $('#login');
+    $login_sec = $('#login_section');
     $start = $('#start');
     $modal = $('#modal');
     // 描画オブジェクトの定義
@@ -172,7 +173,7 @@ $(window).on('load', function () {
     // マップ表示関数実行
     $login.on('click', function () {
         modalIn();
-        $login.addClass('hidden');
+        $login_sec.addClass('hidden');
         $('#route').removeClass('hidden');
         setTimeout(() => {
             init();

@@ -14,20 +14,39 @@
 
 <body>
     <section id="title">
-        <h1 id="title">YOCCHI</h1>
+        <nav class="navbar navbar-dark bg-dark">
+            <span id="title" class="navbar-brand mb-0 h1">YOCCHI</span>
+        </nav>
     </section>
+
     <section id="login_section">
-        <p>ログイン</p>
+        <form>
+            <div class="form-group">
+                <label for="uid">Email address</label>
+                <input type="email" class="login form-control" id="uid" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" class="login form-control" id="pass" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="login" class="btn btn-primary btn-lg btn-block">Login</button>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-block">アカウントをお持ちでない方</button>
+            </div>
+        </form>
+        <!-- <p>ログイン</p>
         <label for="origin">
             ユーザーID
-            <input type="text" id="uid" class="login">
+            <input type="text" id="uid" class="login form-control">
         </label>
         <label for="destination">
             パスワード
-            <input type="password" id="pass" class="login">
+            <input type="password" id="pass" class="login form-control">
         </label>
         <button id="login">Login</button>
-        <button id="account_add">アカウントをお持ちでない方</button>
+        <button id="account_add">アカウントをお持ちでない方</button> -->
     </section>
     <!-- <section id="start"></section> -->
     <section id="route" class="hidden">
