@@ -1,6 +1,25 @@
 # 20181011datascience3rd
-<!-- ## [デモはこちら](https://t-macchinetta.github.io/20181011datascience3rd/){:target="_blank"} -->
+
 ## <a href="https://t-macchinetta.github.io/20181011datascience3rd/" target="_blank">Demo</a>
+
+## 2018/10/07進捗
+### 動作
+- PWA以外は実装
+- 車酔い予測は適当に乱数で調整して一番上の人だけ値が上がる仕様．
+
+### 操作
+- ログインボタン押下でマップ表示(ID&passは入力不要)．現在地中心で表示
+- 「Origin」「Destination」をクリックすると出発地と目的地が自動的に入る
+- 「Start」クリックでルート検索実施．メンバーの車酔い予測も開始．
+- 車酔い予測は数値が60ptを超えるとアラートを出す仕様．
+
+### UI
+- とりあえず誤魔化した感．．．
+
+### 次回(10/08)までの予定
+- PWA仕様完成
+
+
 ## 2018/10/02進捗
 ### 動作
 - 動きは一通り実装
