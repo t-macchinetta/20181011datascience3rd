@@ -1,9 +1,10 @@
 $(window).on('load', function () {
-    $login = $('#login');
-    $login_sec = $('#login_section');
-    $start = $('#start');
-    $modal = $('#modal');
-    $toggle = $('#toggle');
+    var $login = $('#login');
+    var $login_sec = $('#login_section');
+    var $start = $('#start');
+    var $modal = $('#modal');
+    var $toggle = $('#toggle');
+    var disp = 0;
 
     // 描画オブジェクトの定義
     var map;
@@ -95,7 +96,6 @@ $(window).on('load', function () {
                     setTimeout(function () {
                         map.setZoom(12); // ルート表示後にズーム率を変更
                     });
-
                 }
             }
         });
@@ -137,7 +137,7 @@ $(window).on('load', function () {
                     map: map
                 });
                 // 酔いやすい地点はアイコンを設定
-                if (i > 1) {
+                if (i != 0 || i != markerData.length) {
                     marker[i].setOptions({
                         icon: {
                             url: markerData[i]['icon']
@@ -172,6 +172,36 @@ $(window).on('load', function () {
         }, 1000);
     }
 
+    // mapとmemberを切りかえる処理
+    function toggle() {
+        ($toggle.text() == "> member") ? $toggle.text('> map') : $toggle.text('> member');
+        var wh = $(window).height();
+        var nh = $('#title').outerHeight(true);
+        $('#member').css({
+            'top': nh
+        });
+        $('#member').toggleClass('hidden');
+        (disp == 0) ? disp = 1 : disp = 0;
+    }
+    // 車酔いポイント変更用の配列を作成
+    function rand(persons, min, max) {
+        var rand = [];
+        var map = [];
+        for (i = min; i <= max; i++) {
+            map.push(i);
+        }
+        for (i = 0; i < persons; i++) {
+            var v = map[~~(Math.random() * map.length)];
+            rand.push(v);
+        }
+        return rand;
+    }
+
+    // mapとmemberの表示切り替え
+    $toggle.on('click', function () {
+        toggle();
+    });
+
     // マップ表示関数実行
     $login.on('click', function () {
         modalIn();
@@ -201,20 +231,19 @@ $(window).on('load', function () {
         setTimeout(() => {
             route(origin, destination);
         }, 500);
+        // 3秒毎に車酔いポイントの変更
+        var al = 0;
+        setInterval(() => {
+            var person_num = 4;
+            // console.log(rand(person_num, -1, 1));
+            var a = rand(person_num, -1, 1);
+            for (i = 0; i < person_num; i++) {
+                var num_id = Number($('#p' + i).text());
+                (i == 0) ? $('#p' + i).text(num_id + a[i] + 1) : $('#p' + i).text(num_id + a[i]);
+                (i == 0 && num_id + a[i] + 1 > 60) ? al += 1 : i;
+                (i == 0 && al == 1) ? ((disp == 0) ? toggle() : disp, alert('めいさんに車酔いの兆候があります！\n早めの休憩をおすすめします！')) : al
+            }
+        }, 3000);
     });
 
-    // 表示切り替え
-    $toggle.on('click', function () {
-        if ($toggle.text() == "> member") {
-            $toggle.text('> map');
-        } else {
-            $toggle.text('> member');
-        }
-        var wh = $(window).height();
-        var nh = $('#title').outerHeight(true);
-        $('#member').css({
-            'top': nh
-        });
-        $('#member').toggleClass('hidden');
-    });
 });

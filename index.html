@@ -74,50 +74,55 @@
 
     <section id="member" class="main hidden">
         <ul id="list" class="list-group list-group-flush">
-            <li id="p1" class="list-group-item d-flex justify-content-around">
+            <li class="list-group-item d-flex justify-content-around">
                 <div class="person_vis">
-                    <img src="img/c2w.png" alt="" height="100px">
+                    <img src="img/nw.png" alt="" height="100px">
                     <p class="text-center">めい</p>
                 </div>
                 <div class="person_text d-flex flex-column justify-content-center">
                     <p>車酔い予測</p>
-                    <p><span class="text-monospace font-weight-bold display-3">50</span>pt</p>
+                    <p><span id="p0" class="text-monospace font-weight-bold display-3">50</span>pt</p>
                 </div>
             </li>
-            <li id="p2" class="list-group-item d-flex justify-content-around">
+            <li class="list-group-item d-flex justify-content-around">
                 <div class="person_vis">
-                    <img src="img/c2m.png" alt="" height="100px">
+                    <img src="img/nm.png" alt="" height="100px">
                     <p class="text-center">あお</p>
                 </div>
                 <div class="person_text d-flex flex-column justify-content-center">
                     <p>車酔い予測</p>
-                    <p><span class="text-monospace font-weight-bold display-3">50</span>pt</p>
+                    <p><span id="p1" class="text-monospace font-weight-bold display-3">50</span>pt</p>
                 </div>
             </li>
-            <li id="p3" class="list-group-item d-flex justify-content-around">
-                <div class="person_vis">
-                    <img src="img/c2m.png" alt="" height="100px">
-                    <p class="text-center">ゆうた</p>
-                </div>
-                <div class="person_text d-flex flex-column justify-content-center">
-                    <p>車酔い予測</p>
-                    <p><span class="text-monospace font-weight-bold display-3">50</span>pt</p>
-                </div>
-            </li>
-            <li id="p4" class="list-group-item d-flex justify-content-around">
+            <li class="list-group-item d-flex justify-content-around">
                 <div class="person_vis">
                     <img src="img/c2w.png" alt="" height="100px">
                     <p class="text-center">りっか</p>
                 </div>
                 <div class="person_text d-flex flex-column justify-content-center">
                     <p>車酔い予測</p>
-                    <p><span class="text-monospace font-weight-bold display-3">50</span>pt</p>
+                    <p><span id="p2" class="text-monospace font-weight-bold display-3">50</span>pt</p>
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-around">
+                <div class="person_vis">
+                    <img src="img/c2m.png" alt="" height="100px">
+                    <p class="text-center">ゆうた</p>
+                </div>
+                <div class="person_text d-flex flex-column justify-content-center">
+                    <p>車酔い予測</p>
+                    <p><span id="p3" class="text-monospace font-weight-bold display-3">50</span>pt</p>
                 </div>
             </li>
         </ul>
     </section>
 
-    <section id="modal" class="hidden"></section>
+    <section id="modal" class="hidden">
+        <!-- <div id="alert" class=" d-flex flex-column justify-content-center align-items-center">
+            <p>！！めいさんに車酔いの兆候があります！！</p>
+            <p>！！早めの休憩をおすすめします！！</p>
+        </div> -->
+    </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7XKTQ_1sF570LxG2k48p3MDDdoInR8M8" async defer></script>
