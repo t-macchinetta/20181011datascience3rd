@@ -1,4 +1,37 @@
 $(window).on('load', function () {
+    'use strict';
+    var isLocalhost = Boolean(window.location.hostname === 'localhost' ||
+        window.location.hostname === '[::1]' ||
+        window.location.hostname.match(
+            /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+        )
+    );
+
+    if ('serviceWorker' in navigator &&
+        (window.location.protocol === 'https:' || isLocalhost)) {
+        navigator.serviceWorker.register('service-worker.js')
+            .then(function (registration) {
+                registration.onupdatefound = function () {
+                    if (navigator.serviceWorker.controller) {
+                        var installingWorker = registration.installing;
+                        installingWorker.onstatechange = function () {
+                            switch (installingWorker.state) {
+                                case 'installed':
+                                    break;
+                                case 'redundant':
+                                    throw new Error('The installing ' +
+                                        'service worker became redundant.');
+                                default:
+                            }
+                        };
+                    }
+                };
+            }).catch(function (e) {
+                console.error('Error during service worker registration:', e);
+            });
+    }
+
+    // Your custom JavaScript goes here
     var $login = $('#login');
     var $login_sec = $('#login_section');
     var $start = $('#start');
@@ -131,13 +164,13 @@ $(window).on('load', function () {
         // マーカーの描画(ちょっと遅らせてみる)
         setTimeout(() => {
             for (var i = 0; i < markerData.length; i++) {
-                markerLatLng = new google.maps.LatLng({ lat: markerData[i].latlng.lat, lng: markerData[i].latlng.lng }); // 緯度経度のデータ作成
+                var markerLatLng = new google.maps.LatLng({ lat: markerData[i].latlng.lat, lng: markerData[i].latlng.lng }); // 緯度経度のデータ作成
                 marker[i] = new google.maps.Marker({
                     position: markerLatLng,
                     map: map
                 });
                 // 酔いやすい地点はアイコンを設定
-                if (i != 0 || i != markerData.length) {
+                if (i > 0 && i < markerData.length - 1) {
                     marker[i].setOptions({
                         icon: {
                             url: markerData[i]['icon']
@@ -187,7 +220,7 @@ $(window).on('load', function () {
     function rand(persons, min, max) {
         var rand = [];
         var map = [];
-        for (i = min; i <= max; i++) {
+        for (var i = min; i <= max; i++) {
             map.push(i);
         }
         for (i = 0; i < persons; i++) {
@@ -237,7 +270,7 @@ $(window).on('load', function () {
             var person_num = 4;
             // console.log(rand(person_num, -1, 1));
             var a = rand(person_num, -1, 1);
-            for (i = 0; i < person_num; i++) {
+            for (var i = 0; i < person_num; i++) {
                 var num_id = Number($('#p' + i).text());
                 (i == 0) ? $('#p' + i).text(num_id + a[i] + 1) : $('#p' + i).text(num_id + a[i]);
                 (i == 0 && num_id + a[i] + 1 > 60) ? al += 1 : i;
