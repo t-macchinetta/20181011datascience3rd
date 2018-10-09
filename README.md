@@ -2,6 +2,11 @@
 
 ## <a href="https://t-macchinetta.github.io/20181011datascience3rd/" target="_blank">Demo</a>
 
+## 2018/10/09進捗
+- 調整
+- ログイン時のダミーデータが適当に入力されるよう調整
+
+
 ## 2018/10/08進捗
 ### 動作
 - 一通り実装完了

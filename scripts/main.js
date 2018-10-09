@@ -250,6 +250,15 @@ $(window).on('load', function () {
         }, 500);
     });
 
+    // ログイン情報の入力
+    $('#uid').on('click', function () {
+        $('#uid').val('t.hirahara@gs.tokyo');
+    });
+    $('#pass').on('click', function () {
+        $('#pass').val('password');
+    });
+
+
     // 場所の入力
     $('#origin').on('click', function () {
         $('#origin').val(origin.name);
