@@ -207,7 +207,7 @@ $(window).on('load', function () {
 
     // mapとmemberを切りかえる処理
     function toggle() {
-        ($toggle.text() == "> member") ? $toggle.text('> map') : $toggle.text('> member');
+        ($toggle.text() == "$ member") ? $toggle.text('$ map') : $toggle.text('$ member');
         var wh = $(window).height();
         var nh = $('#title').outerHeight(true);
         $('#member').css({
