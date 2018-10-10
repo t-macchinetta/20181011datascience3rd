@@ -282,10 +282,10 @@ $(window).on('load', function () {
             for (var i = 0; i < person_num; i++) {
                 var num_id = Number($('#p' + i).text());
                 (i == 0) ? $('#p' + i).text(num_id + a[i] + 1) : $('#p' + i).text(num_id + a[i]);
-                (i == 0 && num_id + a[i] + 1 > 60) ? al += 1 : i;
+                (i == 0 && num_id + a[i] + 1 > 70) ? al += 1 : i;
                 (i == 0 && al == 1) ? ((disp == 0) ? toggle() : disp, alert('めいさんに車酔いの兆候があります！\n早めの休憩をおすすめします！')) : al
             }
-        }, 3000);
+        }, 1000);
     });
 
 });
