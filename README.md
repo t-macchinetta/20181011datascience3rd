@@ -1,6 +1,6 @@
-# 20181011datascience3rd
+# yocchi
 
-## <a href="https://t-macchinetta.github.io/20181011datascience3rd/" target="_blank">Demo</a>
+## <a href="https://taroosg.github.io/yocchi/" target="_blank">Demo</a>
 
 ## 2018/10/10進捗
 ### 調整
